@@ -4,12 +4,21 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Upload Sample</title>
+    <script src="~/formstone/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="~/formstone/core.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/formstone/upload.css">
+    <script src="~/formstone/upload.js" type="text/javascript"></script>
+    
+
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
+        <asp:GridView ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
+
+
     </div>
     </form>
 </body>
