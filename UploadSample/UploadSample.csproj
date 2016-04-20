@@ -67,9 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="formstone\core.js" />
-    <Content Include="formstone\jquery-2.2.3.min.js" />
+    <Content Include="jqueryUI\jquery-2.2.3.min.js" />
     <Content Include="formstone\upload.css" />
     <Content Include="formstone\upload.js" />
+    <Content Include="jqueryUI\jquery-ui.min.css" />
+    <Content Include="jqueryUI\jquery-ui.min.js" />
+    <Content Include="jqueryUI\jquery.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -92,6 +95,9 @@
       <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="jqueryUI\images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -107,7 +113,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58761</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:58761/</IISUrl>
+          <IISUrl>http://localhost:8888/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:8888/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
