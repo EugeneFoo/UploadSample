@@ -19,7 +19,18 @@ namespace UploadSample
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!this.IsPostBack)
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[3] { new DataColumn("rowid", typeof(int)),
+                            new DataColumn("partuid", typeof(string)),
+                            new DataColumn("partzone",typeof(string)) });
+                dt.Rows.Add(1, "Part A", null);
+                dt.Rows.Add(2, "Part B", null);
+                dt.Rows.Add(3, "Part C", null);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

@@ -223,16 +223,13 @@
 <body>
     <form id="form1" runat="server">
     
-        <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-striped" OnRowDataBound="GridView1_RowDataBound" AutoGenerateColumns="False" DataKeyNames="rowid" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover table-striped" OnRowDataBound="GridView1_RowDataBound" AutoGenerateColumns="False" DataKeyNames="rowid">
             <Columns>
                 <asp:BoundField DataField="rowid" HeaderText="rowid" InsertVisible="False" ReadOnly="True" SortExpression="rowid" />
                 <asp:BoundField DataField="partuid" HeaderText="partuid" SortExpression="partuid" />
                 <asp:BoundField DataField="partzone" HeaderText="partzone" />
             </Columns>
         </asp:GridView>
-
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UploadSampleConnectionString %>" SelectCommand="SELECT [rowid], [partuid], [partzone] FROM [part]"></asp:SqlDataSource>
 
         <button type="button" class="btn btn-primary col-md-12" onclick="postfile()">Save File</button>
    
