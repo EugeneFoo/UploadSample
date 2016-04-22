@@ -27,7 +27,6 @@ Formstone 是以Jquery + Javascript語言編寫，適用於各種開發語言環
 在 `$(document).ready` 時創建upload panel
 
 ``` sh
- //Initial Formstone JS upload
            $(".partfile").upload({
                action: 'FileUploadHandler.ashx?upload=' + 'part',
                autoUpload: true,
@@ -69,8 +68,8 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 ```sh
 HtmlGenericControl part_div = new HtmlGenericControl("div");
-                part_div.ID = "|" + index + '#' + guid; //added
-                part_div.Attributes["class"] = "partfile col-xs-12";
+part_div.ID = "|" + index + '#' + guid; //added
+part_div.Attributes["class"] = "partfile col-xs-12";
 
 ```
 
