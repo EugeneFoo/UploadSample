@@ -80,15 +80,15 @@ HtmlGenericControl part_div = new HtmlGenericControl("div");
 
 ```sh
 HtmlGenericControl part_filediv = new HtmlGenericControl("div"); //after upload file list div
-                part_filediv.ID = "part_filediv";
-                part_filediv.Attributes["style"] = "margin-top: 10px";
+part_filediv.ID = "part_filediv";
+part_filediv.Attributes["style"] = "margin-top: 10px";
 
 ```
 ```sh
 
 HtmlGenericControl part_ul = new HtmlGenericControl("ul"); // uploaded file list div
-                part_ul.ID = "part_file_ls";
-                part_ul.Attributes["class"] = "ulclass";
+part_ul.ID = "part_file_ls";
+part_ul.Attributes["class"] = "ulclass";
                 
 
 ```
