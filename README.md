@@ -115,11 +115,8 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 使用Jquery DatePicker時，需載入Jquery + Jquery UI 的插件。
 ```sh
 <script src="/jqueryUI/jquery-2.2.3.min.js" type="text/javascript"></script>
-
 <script src="/jqueryUI/jquery.js" type="text/javascript"></script>
-
 <script src="/jqueryUI/jquery-ui.min.js" type="text/javascript"></script>
-
 <link rel="stylesheet" href="/jqueryUI/jquery-ui.min.css" />
 ```
 
