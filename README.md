@@ -7,15 +7,13 @@ Formstone JS網址: https://formstone.it/
 Formstone 是以Jquery + Javascript語言編寫，適用於各種開發語言環境。
 
 ***
-### Formstone JS - Upload Panel
-
- - 創建 Formstone Upload Panel
+## Formstone Upload Panel 建立
 
 在html的 `<head>` 內建立
 
 
 ```sh
-     <script src="/jqueryUI/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="/jqueryUI/jquery-2.2.3.min.js" type="text/javascript"></script>
     <script src="/jqueryUI/jquery.js" type="text/javascript"></script>
     <script src="/jqueryUI/jquery-ui.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/jqueryUI/jquery-ui.min.css" />
@@ -67,7 +65,8 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 
 
-創建 `div`, 在裡面加入 `partfile` css class
+
+
 ```sh
                 HtmlGenericControl part_div = new HtmlGenericControl("div");
                 part_div.ID = "|" + index + '#' + guid; //added
@@ -75,8 +74,10 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 ```
 
+創建 `div`, 在裡面加入 `partfile` css class
+*創建div時請務必把  `int index = e.Row.RowIndex;` 的index綁進創建div, 這樣就能區分上傳完畢後的文件屬於哪一個row.
 
-以下兩段主要說明為在Upload Panel下創建一個 `div` ,然後在 `div` 內創建一個 `ul` list,  這就是當上傳完畢後，把文件名字和刪除button顯示在這裡。
+
 ```sh
                 HtmlGenericControl part_filediv = new HtmlGenericControl("div"); //after upload file list div
                 part_filediv.ID = "part_filediv";
@@ -88,5 +89,48 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
                 HtmlGenericControl part_ul = new HtmlGenericControl("ul"); // uploaded file list div
                 part_ul.ID = "part_file_ls";
                 part_ul.Attributes["class"] = "ulclass";
+                
 
 ```
+以上兩段主要說明為在Upload Panel下創建一個 `div` ,然後在 `div` 內創建一個 `ul` list,  這就是當上傳完畢後，把文件名字和刪除button顯示在這裡。
+
+----------
+##Formstone Upload 上傳
+
+    function onStart(e, files)
+
+當開始上傳時，我們能夠先取得此Upload Panel的ID, 然後從它的ID拆出row index來指定是哪一個row上傳的，當上傳完畢後把文件綁定在指定row的`ul` list裡。
+
+    function onBeforeSend(formData, file)
+在傳輸文件前，可在此function檢查文件類別。
+
+    function onFileComplete(e, file, response)
+文件傳輸完畢時，把文件和刪除button綁定在指定的gridrow裡面, 然後再把文件訊息儲存在一個 javascript array.
+
+
+----------
+
+#JQuery DatePicker
+
+使用Jquery DatePicker時，需載入Jquery + Jquery UI 的插件。
+```sh
+<script src="/jqueryUI/jquery-2.2.3.min.js" type="text/javascript"></script>
+
+<script src="/jqueryUI/jquery.js" type="text/javascript"></script>
+
+<script src="/jqueryUI/jquery-ui.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="/jqueryUI/jquery-ui.min.css" />
+```
+
+
+在`$(document).ready` 時define
+
+     $('#datepicker1').datepicker({
+               dateFormat: "yy-mm-dd"
+           });
+
+
+如果你的page有postback, 請記得把這initialize code加在 `pageLoad()`，不然postback後插件會無法顯示:
+
+     function pageLoad()
