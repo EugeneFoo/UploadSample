@@ -68,7 +68,7 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 
 ```sh
-                HtmlGenericControl part_div = new HtmlGenericControl("div");
+HtmlGenericControl part_div = new HtmlGenericControl("div");
                 part_div.ID = "|" + index + '#' + guid; //added
                 part_div.Attributes["class"] = "partfile col-xs-12";
 
@@ -79,14 +79,14 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 
 ```sh
-                HtmlGenericControl part_filediv = new HtmlGenericControl("div"); //after upload file list div
+HtmlGenericControl part_filediv = new HtmlGenericControl("div"); //after upload file list div
                 part_filediv.ID = "part_filediv";
                 part_filediv.Attributes["style"] = "margin-top: 10px";
 
 ```
 ```sh
 
-                HtmlGenericControl part_ul = new HtmlGenericControl("ul"); // uploaded file list div
+HtmlGenericControl part_ul = new HtmlGenericControl("ul"); // uploaded file list div
                 part_ul.ID = "part_file_ls";
                 part_ul.Attributes["class"] = "ulclass";
                 
