@@ -129,6 +129,7 @@
 
        $(document).ready(function () {
        
+           //Initial Formstone JS upload
            $(".partfile").upload({
                action: 'FileUploadHandler.ashx?upload=' + 'part',
                autoUpload: true,
@@ -171,6 +172,10 @@
            });
 
 
+           //Initial date picker
+           $('#datepicker1').datepicker({
+               dateFormat: "yy-mm-dd"
+           });
        });
 
 
@@ -198,6 +203,13 @@
        }
 
    
+        function pageLoad() {
+
+            $('#datepicker1').datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+
+        }
 
       
 
@@ -231,8 +243,12 @@
             </Columns>
         </asp:GridView>
 
-        <button type="button" class="btn btn-primary col-md-12" onclick="postfile()">Save File</button>
-   
+        <div class="col-md-2">
+        <input type="text" class="form-control" id="datepicker1" />
+            </div>
+        <div class="col-md-10">
+        <button type="button" class="btn btn-primary col-md-2 pull-right" onclick="postfile()">Save File</button>
+   </div>
     </form>
 </body>
 </html>
