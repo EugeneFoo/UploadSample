@@ -110,7 +110,7 @@ protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
 
 ----------
 
-#JQuery DatePicker
+#JQuery UI DatePicker
 
 使用Jquery DatePicker時，需載入Jquery + Jquery UI 的插件。
 ```sh
